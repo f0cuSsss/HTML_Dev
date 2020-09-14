@@ -1,0 +1,150 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>������������ ����</title>
+    <link rel="stylesheet" href="Raiting.css" />
+</head>
+<body>
+    <div id="wrap">
+        <div class="Title">
+            <span>Рейтинг HTML</span>
+        </div>
+
+        <div class="essence">
+            <span>Дайте оценку по HTML <br/> от 1 до 5 звезд:</span>
+        </div>
+
+        <form class="raiting-block">
+            <label class="tx">&#8226; Синтаксис</label>
+            <div class="star-block">
+                <div class="raitingBar">
+                    <input type="radio" name="star" id="star5" class="star-b" />
+                    <label for="star5" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star" id="star4" class="star-b" />
+                    <label for="star4" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star" id="star3" class="star-b" />
+                    <label for="star3" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star" id="star2" class="star-b" />
+                    <label for="star2" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star" id="star1" class="star-b" />
+                    <label for="star1" class="star-l">&#9733;</label><br />
+                </div>
+            </div>
+            <!--<input type="reset" value="X" class="btnReset" />-->
+        </form>
+
+        <form class="raiting-block">
+            <label class="tx">&#8226; Читаемость</label>
+            <div class="star-block">
+                <div class="raitingBar">
+                    <input type="radio" name="star1" id="star10" class="star-b" />
+                    <label for="star10" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star1" id="star9" class="star-b" />
+                    <label for="star9" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star1" id="star8" class="star-b" />
+                    <label for="star8" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star1" id="star7" class="star-b" />
+                    <label for="star7" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star1" id="star6" class="star-b" />
+                    <label for="star6" class="star-l">&#9733;</label><br />
+                </div>
+            </div>
+            <!--<input type="reset" value="X" class="btnReset" />-->
+        </form>
+
+        <form class="raiting-block">
+            <label class="tx">&#8226; Масштабируемость</label>
+            <div class="raitingBar">
+                <input type="radio" name="star2" id="star15" class="star-b" />
+                <label for="star15" class="star-l">&#9733;</label><br />
+
+                <input type="radio" name="star2" id="star14" class="star-b" />
+                <label for="star14" class="star-l">&#9733;</label><br />
+
+                <input type="radio" name="star2" id="star13" class="star-b" />
+                <label for="star13" class="star-l">&#9733;</label><br />
+
+                <input type="radio" name="star2" id="star12" class="star-b" />
+                <label for="star12" class="star-l">&#9733;</label><br />
+
+                <input type="radio" name="star2" id="star11" class="star-b" />
+                <label for="star11" class="star-l">&#9733;</label><br />
+            </div>
+            <!--<input type="reset" value="X" class="btnReset" />-->
+        </form>
+
+        <form class="raiting-block">
+            <label class="tx">&#8226; Общая оценка</label>
+            <div class="star-block">
+                <div class="raitingBar">
+                    <input type="radio" name="star3" id="star20" class="star-b" />
+                    <label for="star20" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star3" id="star19" class="star-b" />
+                    <label for="star19" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star3" id="star18" class="star-b" />
+                    <label for="star18" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star3" id="star17" class="star-b" />
+                    <label for="star17" class="star-l">&#9733;</label><br />
+
+                    <input type="radio" name="star3" id="star16" class="star-b" />
+                    <label for="star16" class="star-l">&#9733;</label><br />
+                </div>
+            </div>
+            <!--<input type="reset" value="X" class="btnReset" />-->
+        </form>
+
+        <input type="button" id="btnConfirm" class="btn" value="Готово" onclick="ready()" />
+
+    </div>
+</body>
+</html>
+
+<script>
+    function ready() {
+        var rb1 = document.querySelector('input[name="star"]:checked');
+        if (rb1 == null) {
+            alert('Пропущен ответ на блок "Синтаксис"');
+            return;
+        }
+
+        var rb2 = document.querySelector('input[name="star1"]:checked');
+        if (rb2 == null) {
+            alert('Пропущен ответ на блок "Читаемость"');
+            return;
+        }
+
+        var rb3 = document.querySelector('input[name="star2"]:checked');
+        if (rb3 == null) {
+            alert('Пропущен ответ на блок "Масштабируемость"');
+            return;
+        }
+
+        var rb4 = document.querySelector('input[name="star3"]:checked');
+        if (rb4 == null) {
+            alert('Пропущен ответ на блок "Общая оценка"');
+            return;
+        }
+
+        var anw1 = rb1.id;
+        var anw2 = rb2.id;
+        var anw3 = rb3.id;
+        var anw4 = rb4.id;
+        alert("Ваша статистика ответов" + 
+            "\nОтвет 1: " + anw1 +
+            "\nОтвет 2: " + anw2 +
+            "\nОтвет 3: " + anw3 +
+            "\nОтвет 4: " + anw4 );
+    }
+</script>
